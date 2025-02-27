@@ -1,0 +1,27 @@
+---
+const PROJECTS = [
+    {
+        title: "Calendars",
+        description: "Suscribe to the calendar of your team.",
+        link: "https://m-franco.github.io/calendars/",
+        github: "https://github.com/m-franco/calendars",
+        //image: "/img/calendars.png",
+        image: 'https://via.placeholder.com/300x200',
+        tags: ["Astro", "Tailwind"]
+    }
+]
+---
+{
+    PROJECTS.map(({title,description,image, tags}) => (
+        <article>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>
+                {tags.map((tag) => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img src={image} alt={title} />
+        </article>
+    ))
+}

@@ -8,18 +8,21 @@ import Mail from '../icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Briefcase from '../icons/Briefcase.astro';
+import Code from '../icons/Code.astro';
+import Projects from '../components/Projects.astro';
+//"../../public/img/Matias_Franco.jpg" 
 ---
 
 <Layout title="Portfolio of Matias Franco - Developer and web programmer"
     description="Hire Matias Franco for your next project.">
-	<main>
-        <SectionContainer class="pt-44 pb-24">
+	<main class="px-2">
+        <SectionContainer class="pt-44 pb-32">
             <img 
                 class="rounded-full size-12 mb-4" 
-                src="../../public/img/Matias_Franco.jpg" 
+                src="https://avatars.githubusercontent.com/u/14301536?v=4" 
                 alt="Matias Franco" 
             />
-            <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"> 
+            <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"> 
                 Hey, I'm Matias Franco 
                 <a
                 href="https://www.linkedin.com/in/mat%C3%ADas-franco-4913015b/"
@@ -29,33 +32,41 @@ import Briefcase from '../icons/Briefcase.astro';
                     <Badge>Available for hire</Badge>
                 </a>
             </h1>
-            <h2 class="text-2xl opacity-80 text-wrap">
+            <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
                 <span>+10 years of experience.</span>
                 <span class="text-yellow-200/90">Fullstack developer.</span>
                 <span class="text-cyan-200/90">From Montevideo, Uruguay 🇺🇾.</span>
                 <span class="opacity-75">Specialized in web development.</span>
             </h2>
-            <nav class="flex gap-x-4 mt-8">
+            <nav class="flex gap-4 mt-8 flex-wrap">
                 <SocialIcon href="https://www.linkedin.com/in/mat%C3%ADas-franco-4913015b/">
-                    <LinkedIn class="size-6"/>
+                    <LinkedIn class="size-4 md:size-6"/>
                     LinkedIn.
                 </SocialIcon>
                 <SocialIcon href="https://github.com/m-franco">
-                    <GitHub class="size-6"/>
+                    <GitHub class="size-4 md:size-6"/>
                     GitHub
                 </SocialIcon>
                 <SocialIcon href="mailto:matiasfranco86@hotmail.com">
-                    <Mail class="size-6"/>
+                    <Mail class="size-4 md:size-6"/>
                     matiasfranco86@hotmail.com
                 </>
             </nav>
         </SectionContainer>
         <SectionContainer id="experience">
-            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+            <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
                 <Briefcase class="size-7"/>
                 Work experience
             </h2>
             <Experience/>
+        </SectionContainer>
+
+        <SectionContainer id="projects">
+            <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+                <Code class="size-7"/>
+                Projects
+            </h2>
+            <Projects/>
         </SectionContainer>
         
 	</main>
