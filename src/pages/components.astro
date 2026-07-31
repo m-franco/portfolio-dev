@@ -1,0 +1,31 @@
+---
+import Badge from '@/components/Badge.astro';
+import SectionContainer from '@/components/SectionContainer.astro';
+import SocialIcon from '@/icons/SocialIcon.astro';
+import LinkedInIcon from '@/icons/LinkedIn.astro';
+
+import Layout from '@/layouts/Layout.astro';
+---
+<Layout 
+    title="Design System - Reusable UI Components" 
+    description='A collection of reusable UI components.'>
+    <SectionContainer class="pt-44 pb-32 flex flex-col gap-y-10">
+        <article class="mb-10">
+            <h1 class="mb-4 text-xl font-semibold">&lt;Badge /&gt;</h1>
+            <Badge>Available for hire</Badge>
+        </article>
+
+        <article class="mb-10">
+            <h1 class="mb-4 text-xl font-semibold">&lt;SocialIcon /&gt;</h1>
+            <div class="flex">            
+                <SocialIcon href="https://www.linkedin.com/in/matias-franco-dev/">
+                    <LinkedInIcon class="size-4 md:size-6"/>
+                    LinkedIn
+                </SocialIcon>
+            </div>
+        </article>
+
+
+    </SectionContainer>
+
+</Layout>

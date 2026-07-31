@@ -1,27 +1,49 @@
 ---
-const PROJECTS = [
-    {
-        title: "Calendars",
-        description: "Suscribe to the calendar of your team.",
-        link: "https://m-franco.github.io/calendars/",
-        github: "https://github.com/m-franco/calendars",
-        //image: "/img/calendars.png",
-        image: 'https://via.placeholder.com/300x200',
-        tags: ["Astro", "Tailwind"]
-    }
-]
+import AstroIcon from '../icons/AstroIcon.astro';
+import TailwindIcon from '../icons/Tailwind.astro';
+import { ui, type Lang } from '@/i18n/ui';
+
+interface Props {
+    lang?: Lang;
+}
+
+const lang = Astro.props.lang ?? "en";
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "bg-cyan-600 text-white",
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: TailwindIcon
+    },
+};
+
+const PROJECTS = ui[lang].projects.map((project) => ({
+    ...project,
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+}));
 ---
 {
-    PROJECTS.map(({title,description,image, tags}) => (
+    PROJECTS.map(({title, description, image, tags}) => (
         <article>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <ul>
+            <h3 class="text-2xl font-semibold text-cyan-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty ">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-4">
                 {tags.map((tag) => (
-                    <li>{tag}</li>
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4"/> 
+                            {tag.name}
+                        </span>
+                    </li>
                 ))}
             </ul>
-            <img src={image} alt={title} />
+            <img class="rounded shadow-2xl shadow-white/20" 
+            src={image} alt={title} />
         </article>
     ))
 }

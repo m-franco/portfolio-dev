@@ -1,0 +1,18 @@
+---
+import { ui, type Lang } from "@/i18n/ui";
+
+interface Props {
+    lang?: Lang;
+}
+
+const lang = Astro.props.lang ?? "en";
+const paragraphs = ui[lang].about;
+---
+
+<section class="flex gap-x-4">
+    <div class="[&>p]:mb-4 [&>p>strong]:text-cyan-200/90">
+        {paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+        ))}
+    </div>
+</section>

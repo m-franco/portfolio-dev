@@ -1,42 +1,19 @@
 ---
-import LinkedIn from "../icons/LinkedIn.astro"
 import ExperienceItem from "./ExperienceItem.astro"
+import { ui, type Lang } from "@/i18n/ui";
 
-const EXPERIENCE = [
-    {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        link: 'https://www.linkedin.com/in/mat%C3%ADas-franco-4913015b/',
-    },
-    {
-        date: 'April 2022',
-        title: 'E-Commerce UI code in Tailwind CSS',
-        description: 'Get started with dozens of web components and interactive elements built on top of Tailwind CSS.',
-    },
-    {
-        date: 'March 2022',
-        title: 'Marketing UI design in Figma',
-        description: 'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-    },
-    {
-        date: 'January 2022',
-        title: 'Application UI design in Figma',
-        description: 'Get started with dozens of web components and interactive elements built on top of Figma.',
-    },
-    {
-        date: 'December 2021',
-        title: 'E-Commerce UI design in Figma',
-        description: 'All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.',
-    },
-]
+interface Props {
+    lang?: Lang;
+}
+
+const lang = Astro.props.lang ?? "en";
+const experience = ui[lang].experience;
 ---
-<ol class="relative border-s border-gray-200  ml-3">
-    {EXPERIENCE.map(item => (
+<ol class="relative border-s border-gray-200 ml-3">
+    {experience.items.map(item => (
         <li class="mb-10 ms-4">
-            <ExperienceItem {...item}/>
+            <ExperienceItem {...item} learnMore={experience.learnMore}/>
         </li>
        
     ))}              
 </ol>
-
