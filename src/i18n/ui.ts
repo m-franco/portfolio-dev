@@ -114,8 +114,8 @@ export const ui = {
     },
     es: {
         meta: {
-            title: "Portfolio de Matias Franco - Desarrollador y programador web",
-            description: "Contrata a Matias Franco para tu próximo proyecto.",
+            title: "Portfolio de Matías Franco - Desarrollador y programador web",
+            description: "Contrata a Matías Franco para tu próximo proyecto.",
         },
         nav: {
             experience: "Experiencia",
@@ -124,7 +124,7 @@ export const ui = {
             contact: "Contacto",
         },
         hero: {
-            greeting: "Hola, soy Matias Franco",
+            greeting: "Hola, soy Matías Franco",
             badge: "Disponible para trabajar",
             summary: [
                 "+13 años de experiencia.",

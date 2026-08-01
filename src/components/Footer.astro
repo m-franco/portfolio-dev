@@ -7,12 +7,13 @@ interface Props {
 
 const lang = Astro.props.lang ?? "en";
 const copy = ui[lang].footer;
+const displayName = lang === "es" ? "Matías Franco" : "Matias Franco";
 ---
 
 <footer id="contact" class=" rounded-lg shadow-sm m-4 bg-black/20 backdrop-blur-lg w-full xl:w-[1120px] mx-auto mb-10">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
       <span class="text-sm sm:text-center text-cyan-200/80">© 2026 
-        <a href={homeUrl(lang)} class="hover:underline">Matias Franco</a>. {copy.rights}
+        <a href={homeUrl(lang)} class="hover:underline">{displayName}</a>. {copy.rights}
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0">
         <li>

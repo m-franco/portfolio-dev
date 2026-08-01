@@ -11,45 +11,47 @@ const copy = ui[lang].nav;
 
 <header
     class="
-        flex justify-center items-center
+        header-shell relative flex items-start justify-center
         mx-auto
-        py-5 
+        px-3 py-3 sm:py-5
         sticky top-0
-        w-full xl:w-[1120px] 
+        w-full xl:w-[1120px]
         z-10
 ">
 
     <nav
         class={`
+            nav-pill
             border border-black rounded-full 
-            px-3 py-1
-            flex flex-row items-center
+            h-8 px-1 sm:h-9 sm:px-2
+            flex max-w-[calc(100vw-6rem)] flex-row flex-nowrap items-center justify-center
             bg-black/30
             dark:bg-black/50
             backdrop-blur-2xl
+            text-[9px] min-[380px]:text-[10px] sm:max-w-none sm:text-base
         `}
         aria-label="Primary navigation"
     >
         <a
-        class="hover:bg-white/10 rounded-full px-3 transition"
+        class="whitespace-nowrap hover:bg-white/10 rounded-full px-1 py-1 transition sm:px-3"
         href={hashUrl(lang, "experience")}>{copy.experience}</a>
         <a
-        class="hover:bg-white/10 rounded-full px-3 transition"
+        class="whitespace-nowrap hover:bg-white/10 rounded-full px-1 py-1 transition sm:px-3"
         href={hashUrl(lang, "projects")}>{copy.projects}</a>
         <a
-        class="hover:bg-white/10 rounded-full px-3 transition"
+        class="whitespace-nowrap hover:bg-white/10 rounded-full px-1 py-1 transition sm:px-3"
         href={hashUrl(lang, "about-me")}>{copy.about}</a>
         <a
-        class="hover:bg-white/10 rounded-full px-3 transition"
+        class="whitespace-nowrap hover:bg-white/10 rounded-full px-1 py-1 transition sm:px-3"
         href={hashUrl(lang, "contact")}>{copy.contact}</a>
     </nav>
 
     <details
-        class="group relative ml-6 shrink-0 rounded-full border border-black bg-black/30 px-3 py-1 backdrop-blur-2xl dark:bg-black/50"
+        class="lang-switcher group absolute right-3 top-3 h-8 shrink-0 rounded-full border border-black bg-black/30 px-3 text-sm backdrop-blur-2xl dark:bg-black/50 sm:top-5 sm:h-9 sm:text-base"
         id="lang-switcher"
     >
         <summary
-            class="flex cursor-pointer list-none items-center gap-2 rounded-full transition hover:bg-white/10 focus:outline-none focus-visible:bg-white/10 [&::-webkit-details-marker]:hidden"
+            class="flex h-full cursor-pointer list-none items-center gap-2 rounded-full transition hover:bg-white/10 focus:outline-none focus-visible:bg-white/10 [&::-webkit-details-marker]:hidden"
             aria-label="Idioma / Language"
         >
             <span>{LANG_FLAGS[lang]}</span>
@@ -94,3 +96,10 @@ const copy = ui[lang].nav;
         window.addEventListener("pageshow", () => switcher.removeAttribute("open"));
     })();
 </script>
+<style>
+    @media (max-width: 430px) {
+        .nav-pill {
+            max-width: calc(100vw - 5.25rem);
+        }
+    }
+</style>

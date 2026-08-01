@@ -20,6 +20,7 @@ interface Props {
 
 const lang = Astro.props.lang ?? "en";
 const copy = ui[lang];
+const displayName = lang === "es" ? "Matías Franco" : "Matias Franco";
 ---
 
 <Layout title={copy.meta.title} description={copy.meta.description} lang={lang}>
@@ -28,10 +29,10 @@ const copy = ui[lang];
             <img
                 class="rounded-full size-12 mb-4"
                 src="https://avatars.githubusercontent.com/u/14301536?v=4"
-                alt="Matias Franco"
+                alt={displayName}
             />
             <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex
-                flex-row gap-x-4 pb-6 lg:pb-10"
+                flex-col items-start gap-y-3 pb-6 sm:flex-row sm:items-center sm:gap-x-4 lg:pb-10"
             >
                 {copy.hero.greeting}
                 <a
